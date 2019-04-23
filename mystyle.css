@@ -4,11 +4,17 @@ body {
 }
 .banner {
 	position: relative;
+	background-image: url("images/banner.png");
+  	height: 250px;
+  	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: 100% 100%;
+    background-position: center;
 }
 
 .banner__content {
 	position: absolute;
-	top: 45%;
+	top: 39%;
 	left: 50%;
 	transform: translateY(-50%);
 	transform: translateX(-50%);
@@ -23,8 +29,33 @@ body {
 	content: ">" !important;
 }
 
-.test: {
+.test {
 	color: #3c4d69;
+}
+
+.content__bg {
+	height: 200px;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.content__bg.content__bg--1 {
+	background-image: url("images/content_image_1.png");
+
+}
+
+.content__bg.content__bg--2 {
+	background-image: url("images/content_image_2.png");
+}
+
+.content__bg.content__bg--3 {
+	background-image: url("images/content_image_3.png");
+}
+
+.content__bg.content__bg--4 {
+	background-image: url("images/content_image_4.png");
 }
 
 .content__title {
@@ -61,10 +92,10 @@ body {
 	background: black;
 }
 
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
+.carousel-inner img {
+	width: 100%;
+	height: 100%;
+}
 
 @media screen and (min-width: 240px){
 	.banner__content__title {
@@ -78,10 +109,6 @@ body {
 
 	.footer__padding {
 		padding-bottom: 5px;
-	}
-
-	.banner__content {
-		top: 35%;
 	}
 }
 
@@ -103,16 +130,32 @@ body {
 		height: 500px;
 	}
 
+	.banner {
+		height: 250px;
+	}
+
+	.content__bg {
+		height: 200px;
+	}
+
 }
 
 @media all and (min-width: 600px) {
 	.banner__content__title {
-		font-size: 26px;
+		font-size: 25px;
 	}
 
 	.banner__content__img {
 		width: 60px;
 		height: 100%;
+	}
+
+	.banner {
+		height: 400px;
+	}
+
+	.content__bg {
+		height: 300px;
 	}
 
 }
@@ -126,15 +169,31 @@ body {
 		width: 72px;
 		height: 100%;
 	}
+
+	.banner {
+		height: 550px;
+	}
+
+	.content__bg {
+		height: 400px;
+	}
 }
 
 @media all and (min-width: 1280px) {
 	.banner__content__title {
-		font-size: 36px;
+		font-size: 50px;
 	}
 
 	.banner__content__img {
 		width: 84px;
 		height: 100%;
+	}
+
+	.banner {
+		height: 700px;
+	}
+
+	.content__bg {
+		height: 500px;
 	}
 }
