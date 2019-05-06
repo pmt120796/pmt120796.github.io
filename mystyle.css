@@ -2,6 +2,25 @@ body {
 	font-family: 'Myriad Pro' !important;
 	font-size: 16px !important;
 }
+
+.wrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.wrapper__container {
+	max-width: 770px;
+}
+
+.wrapper__container--navbar {
+	max-width: 1050px;
+}
+
+.navbar--custom {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
 .banner {
 	position: relative;
 	background-image: url("images/banner.png");
