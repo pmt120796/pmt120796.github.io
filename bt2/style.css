@@ -1,0 +1,254 @@
+body {
+  font-family: 'Myriad Pro' !important;
+  font-size: 16px !important;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.wrapper__container {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .wrapper__container {
+    max-width: 1033px;
+  }
+}
+.wrapper__container__main {
+  max-width: 100%;
+}
+@media (min-width: 1200px) {
+  .wrapper__container__main {
+    max-width: 770px;
+  }
+}
+
+.header {
+  height: 120px;
+  background-color: #0c4aa2;
+}
+.header__items {
+  height: 100%;
+}
+.header__title {
+  color: white;
+  margin: 0px !important;
+}
+.header__title--large {
+  font-size: 30px;
+}
+.header__container {
+  height: 120px;
+  background-color: #0c4aa2;
+}
+.header__container--below {
+  height: 30px;
+  background-color: #5581be;
+}
+
+.breadcrumb-item__content:before {
+  content: ">" !important;
+  color: white !important;
+}
+
+.navbar--custom {
+  background-color: transparent !important;
+  padding: 0 !important;
+  height: 30px;
+}
+
+.bg {
+  height: 200px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+@media (min-width: 1025px) {
+  .bg {
+    height: 520px;
+  }
+}
+
+.bg__image {
+  background-image: url("images/content_image_1.png");
+}
+
+.bg__image--2 {
+  background-image: url("images/content_image_2.png");
+}
+
+.mt-90 {
+  margin-top: 90px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.text-color {
+  color: #3a4d69;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.place {
+  padding-top: 90px;
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+}
+.place__container {
+  display: flex;
+  justify-content: space-between;
+}
+.place__container--image {
+  display: none;
+  grid-template-columns: 33% 33% 33%;
+  grid-row-gap: 5px;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (min-width: 768px) {
+  .place__container--image {
+    grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
+  }
+}
+.place__container--image :hover .place__container__image {
+  transform: rotateY(360deg);
+  transition: 1.5s ease-in-out;
+}
+.place__container--active {
+  display: grid;
+}
+.place__container__image {
+  width: 100%;
+  height: 120px;
+}
+@media (min-width: 768px) {
+  .place__container__image {
+    height: 150px;
+  }
+}
+@media (min-width: 1025px) {
+  .place__container__image {
+    height: 180px;
+  }
+}
+.place__container__image__text {
+  color: #3a4d69;
+}
+.place__container__box {
+  width: 167.1666666667px;
+  position: relative;
+  margin-bottom: 25px;
+}
+.place__container__box__button {
+  width: 100%;
+  border: 1px solid #dddddd;
+  height: 40px;
+  background: white;
+  cursor: pointer;
+  text-align: center;
+  transition: all 1s;
+}
+.place__container__box__button::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  position: absolute;
+  -ms-transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
+  transform: rotate(45deg);
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  transition: all 1s;
+}
+.place__container__box__button:hover span {
+  background: #3a4d69;
+  color: white;
+}
+.place__container__box__button span {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  position: relative;
+  z-index: 10000;
+  transition: all 1s;
+  color: #3a4d69;
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  .place__container__box__button span {
+    font-size: 14px;
+  }
+}
+.place__container__box__button--active {
+  background: #3a4d69;
+  border-color: #3a4d69;
+  position: relative;
+}
+.place__container__box__button--active::after {
+  background: #3a4d69;
+}
+.place__container__box__button--active span {
+  background: #3a4d69;
+  color: white;
+}
+
+.footer {
+  background: #2b2b2b;
+}
+.footer__link {
+  color: #9a9a9a !important;
+}
+.footer__icon {
+  font-size: 26px;
+  color: #9a9a9a;
+}
+.footer--below {
+  background: black;
+}
+
+.place__more {
+  width: 385px;
+  height: 50px;
+  background: #3a4d69;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
