@@ -12,6 +12,12 @@ $button-color: #3a4d69;
   }
 }
 
+@mixin mobile--max {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: #{$tablet-width}) {
     @content;
@@ -31,7 +37,6 @@ $button-color: #3a4d69;
 }
 
 body {
-	font-family: 'Myriad Pro' !important;
 	font-size: 16px !important;
 	margin: 0 auto; 
 }
@@ -39,6 +44,15 @@ body {
 .wrapper {
 	padding-left: 15px;
 	padding-right: 15px;
+
+	&--background {
+		padding: 0px;
+
+		@include desktop {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
 
 	&__container {
 		max-width: 100%;
@@ -50,7 +64,7 @@ body {
 		&__main {
 			max-width: 100%;
 
-			@include large-desktop {
+			@include desktop {
 				max-width: 770px;
 			}
 		}
@@ -70,7 +84,8 @@ body {
 		margin: 0px !important;
 
 		&--large {
-			font-size: 30px;
+			font-size: 34px;
+			line-height: 34px;
 		}
 	}
 
@@ -94,14 +109,22 @@ body {
 	background-color: transparent !important;
 	padding: 0 !important;
 	height: 30px;
+
+	& a {
+		font-size: 13px;
+	}
 }
 
 .bg {
-	height: 200px;
+	height: 300px;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     background-position: center;
+
+    @include tablet {
+    	height: 420px;
+    }
 
     @include desktop {
     	height: 520px;
@@ -142,12 +165,21 @@ body {
 	padding-bottom: 50px;
 
 	&__container {
-		display: flex;
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
 		justify-content: space-between;
+
+		& div {
+			width: 100%;
+		}
+
+        @include tablet {
+        	grid-template-columns: 16.1% 16.1% 16.1% 16.1% 16.1% 16.1%;
+        }
 
 		&--image {
 			display: none;
-			grid-template-columns: 33% 33% 33%;
+			grid-template-columns: 49% 49%;
 			grid-row-gap: 5px;
             -webkit-animation-duration: 2s;
             animation-duration: 2s;
@@ -166,12 +198,11 @@ body {
 	         }
 
  			@include tablet {
-				grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
+				grid-template-columns: 33% 33% 33%;
 			}
 
-			& :hover .place__container__image{
-				transform: rotateY(360deg);
-				transition: 1.5s ease-in-out;
+			@include desktop {
+				grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
 			}
 		}
 
@@ -180,8 +211,9 @@ body {
 		}
 
 		&__image {
+			overflow: hidden;
 			width: 100%;
-			height: 120px;
+			height: 180px;
 
 			@include tablet {
 				height: 150px;
@@ -191,13 +223,31 @@ body {
 				height: 180px;
 			}
 
+			&:hover > img{
+				transform: scale(1.5,1.5);
+				
+			}
+
+			& > img {
+				width: 100%;
+				height: 180px;
+				object-fit: cover;
+				transition: 1s ease-in-out;
+
+				@include tablet {
+					object-fit: fill;
+				}
+			}
+
+
 			&__text {
 				color: $font-color;
+				font-size: 17px;
 			}
 		}
 
 		&__box {
-			width: (1033px / 6 - 5px);
+			width: 100%;
 			position: relative;
 			margin-bottom: 25px;
 
@@ -212,6 +262,7 @@ body {
 
 				&::after {
 					content: '';
+					display: none;
 					width: 20px;
 					height: 20px;
 					background: transparent;
@@ -224,6 +275,9 @@ body {
 				  	right: 0;
 				  	bottom: -10px;
 				  	transition: all 1s;
+				  	@include tablet {
+				  		display: block;
+				  	}
 				}
 				
 				&:hover span{
@@ -243,10 +297,10 @@ body {
 					z-index: 10000;
 					transition: all 1s;
 					color: $button-color;
-					font-size: 12px;
+					font-size: 14px;
 
-					@include tablet {
-						font-size: 14px;
+					@include desktop {
+						font-size: 16px;
 					}
 				}
 
@@ -282,6 +336,14 @@ body {
 
 	&--below {
 		background: black;
+	}
+
+	&__mid {
+		width: 400px;
+		flex-wrap: wrap;
+		@include desktop {
+			width: 100%;
+		}
 	}
 }
 
